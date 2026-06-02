@@ -1,59 +1,404 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" data-bs-theme="dark">
 <head>
+    <!-- Configurações básicas da página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título exibido na aba do navegador -->
     <title>SoulGeek | Social Media de Filmes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Framework Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Biblioteca de ícones -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Bootstrap JS (necessário para componentes interativos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Arquivo CSS personalizado -->
+    <link rel="stylesheet" href="../Assets/CSS/style.css">
 </head>
+
 <body>
+
+    <!-- ==========================================
+         NAVBAR PRINCIPAL
+    =========================================== -->
     <header>
-        <nav class="navbar navbar-dark bg-dark px-4 py-3">
+        <nav class="navbar border-bottom px-4 py-3">
             <div class="container-fluid">
-                <!-- ESQUERDA -->
+
+                <!-- Área esquerda:
+                     Menu lateral, alternância de tema e logo -->
                 <div class="d-flex align-items-center gap-3">
-                    <!-- MENU -->
-                    <button class="btn text-light">
+
+                    <!-- Botão que abre a sidebar -->
+                    <button
+                        class="btn"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebar">
                         <i class="bi bi-list fs-2"></i>
                     </button>
-                    <!-- LOGO -->
-                    <h1 class="text-light fs-3 m-0">SoulGeek</h1>
-                </div>
-                <!-- DIREITA -->
-                <div class="d-flex align-items-center gap-3">
-                    <!-- LOGIN -->
-                    <button class="btn btn-outline-light">Login</button>
-                    <!-- CADASTRO -->
-                    <button class="btn btn-success text-nowrap">Criar Conta</button>
-                    <!-- BUSCA -->
-                    <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar filmes ou séries"/>
-                    <button class="btn btn-success">
-                        <i class="bi bi-search"></i>
+
+                    <!-- Alternância entre tema claro e escuro -->
+                    <button
+                        id="themeToggle"
+                        class="btn btn-outline-secondary">
+                        <i class="bi bi-moon-fill"></i>
                     </button>
-                    </div>
+
+                    <!-- Logo do projeto -->
+                    <h1 class="fs-3 m-0">SoulGeek</h1>
+
                 </div>
+
+                <!-- Área direita:
+                     Login, cadastro e pesquisa -->
+                <div class="d-flex align-items-center gap-3">
+
+                    <button class="btn btn-outline-secondary">
+                        Login
+                    </button>
+
+                    <button class="btn btn-success text-nowrap">
+                        Criar Conta
+                    </button>
+
+                    <!-- Campo de pesquisa -->
+                    <div class="input-group">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Buscar filmes ou séries">
+
+                        <button class="btn btn-success">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+
+                </div>
+
             </div>
         </nav>
     </header>
 
+    <!-- ==========================================
+         SIDEBAR (OFFCANVAS)
+    =========================================== -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
+
+        <div class="offcanvas-header">
+
+            <h5 class="offcanvas-title">
+                SoulGeek
+            </h5>
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <!-- Links principais da plataforma -->
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-house me-2"></i>
+                        Início
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-film me-2"></i>
+                        Filmes
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-tv me-2"></i>
+                        Séries
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-star me-2"></i>
+                        Reviews
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-info-circle me-2"></i>
+                        Sobre
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+    =========================================== -->
     <main>
-        <section id="hero"></section>
-    
-    
-        <section id="movies"></section>
 
-        <section id="series"></section>
+        <!-- Hero Section:
+             apresentação da plataforma -->
+        <section id="hero" class="container py-5">
 
-        <section id="about"></section>
+            <div class="row align-items-center">
 
-        <section id="reviews"></section>
+                <div class="col-lg-6">
+
+                    <h1 class="display-3 fw-bold">
+                        Descubra filmes incríveis.
+                    </h1>
+
+                    <p class="lead">
+                        Compartilhe opiniões,
+                        encontre recomendações e converse
+                        com outros fãs.
+                    </p>
+
+                    <button class="btn btn-success btn-lg">
+                        Comece Agora
+                    </button>
+
+                </div>
+
+                <!-- Espaço reservado para imagem principal -->
+                <div class="col-lg-6"></div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+             FILMES EM DESTAQUE
+        =========================================== -->
+
+        <!-- Filme: Interestelar -->
+        <section>
+            <div class="col-md-3">
+                <div class="movie-card">
+
+                    <img
+                        src="../Assets/IMG/zstvmu042i1c1.jpg"
+                        class="img-fluid rounded-top">
+
+                    <div class="p-3">
+
+                        <h5>Interestelar</h5>
+
+                        <p>
+                            2014 • Ficção Científica
+                        </p>
+
+                        <span class="rating">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Filme: Ilha do Medo -->
+        <section>
+            <div class="col-md-3">
+                <div class="movie-card">
+
+                    <img
+                        src="../Assets/IMG/20140827-ilha-do-medo-2010-poster-615x864.webp"
+                        class="img-fluid rounded-top">
+
+                    <div class="p-3">
+
+                        <h5>Ilha do Medo</h5>
+
+                        <p>
+                            2010 • Suspense
+                        </p>
+
+                        <span class="rating">
+                            ★ 4.8
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Filme: Seven -->
+        <section>
+            <div class="col-md-3">
+                <div class="movie-card">
+
+                    <img
+                        src="../Assets/IMG/71ShGTVJy4L._AC_UF1000,1000_QL80_.jpg"
+                        class="img-fluid rounded-top">
+
+                    <div class="p-3">
+
+                        <h5>Seven</h5>
+
+                        <p>
+                            1995 • Suspense
+                        </p>
+
+                        <span class="rating">
+                            ★ 4.9
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Filme: La La Land -->
+        <section>
+            <div class="col-md-3">
+                <div class="movie-card">
+
+                    <img
+                        src="../Assets/IMG/La_La_Land.webp"
+                        class="img-fluid rounded-top">
+
+                    <div class="p-3">
+
+                        <h5>La La Land</h5>
+
+                        <p>
+                            2016 • Musical
+                        </p>
+
+                        <span class="rating">
+                            ★ 4.7
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </main>
 
-    <footer>
+    <!-- ==========================================
+         RODAPÉ
+    =========================================== -->
+    <footer class="footer py-4">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Descrição da plataforma -->
+                <div class="col-md-4">
+
+                    <h5>SoulGeek</h5>
+
+                    <p>
+                        Sua comunidade para descobrir,
+                        avaliar e compartilhar opiniões
+                        sobre filmes e séries.
+                    </p>
+
+                </div>
+
+                <!-- Navegação rápida -->
+                <div class="col-md-4">
+
+                    <h5>Navegação</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#movies">Filmes</a></li>
+                        <li><a href="#series">Séries</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contato e redes sociais -->
+                <div class="col-md-4">
+
+                    <h5>Contato</h5>
+
+                    <p>
+                        contato@soulgeek.com
+                    </p>
+
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-github"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-twitter-x"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <!-- Direitos autorais -->
+            <div class="text-center">
+                © 2026 SoulGeek - Todos os direitos reservados.
+            </div>
+
+        </div>
 
     </footer>
+
+    <script>
+
+        // Referências aos elementos da página
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Alterna entre tema claro e escuro
+        themeToggle.addEventListener('click', () => {
+
+            const currentTheme =
+                html.getAttribute('data-bs-theme');
+
+            if(currentTheme === 'dark') {
+
+                html.setAttribute('data-bs-theme', 'light');
+
+                themeToggle.innerHTML =
+                    '<i class="bi bi-sun-fill"></i>';
+
+            } else {
+
+                html.setAttribute('data-bs-theme', 'dark');
+
+                themeToggle.innerHTML =
+                    '<i class="bi bi-moon-fill"></i>';
+
+            }
+
+        });
+
+    </script>
+
 </body>
 </html>
