@@ -79,7 +79,7 @@ function mostrarPerfil(usuario){
 
     document.getElementById("areaUsuario").innerHTML = `
         <a
-            href="perfil.html"
+            href="../HTML/Pages/perfil.html"
             class="btn btn-outline-light d-flex align-items-center gap-2"
         >
             <i class="bi bi-person-circle"></i>
