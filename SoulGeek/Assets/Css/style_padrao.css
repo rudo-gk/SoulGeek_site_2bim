@@ -1,6 +1,13 @@
+
+:root{
+    --cor-verde: #198754;
+    --cor-sidebar: #2b3035;
+    --cor-texto: white;
+}
+
 body{
     background-color: #25292c;
-    color: white;
+    color: var(--cor-texto);
 }
 .navbar{
     box-shadow: 0 5px 20px rgba(0,0,0,0.4);
@@ -12,7 +19,7 @@ body{
     left: -250px;
     width: 250px;
     height: 100vh;
-    background-color: #2b3035;
+    background-color: var(--cor-sidebar);
     padding: 20px;
     transition: 0.3s;
     z-index: 999;
@@ -40,9 +47,9 @@ body{
 }
 
 #sidebar a{
-    color: white;
+    color: var(--cor-texto);
 }
 
 #sidebar a:hover{
-    color: #198754;
+    color: var(--cor-verde);
 }
