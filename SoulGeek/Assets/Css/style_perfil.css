@@ -1,4 +1,16 @@
-.perfil{
-    color: white;
+.posicionamento{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+
+}
+
+.bloco_perfil{
+    background-color: rgb(134, 134, 134);
+    width: 100%;
+    border-radius: 8px;
+    align-items: certer;
+    padding: 20px;
+    height: 100%;
+    
 
 }
