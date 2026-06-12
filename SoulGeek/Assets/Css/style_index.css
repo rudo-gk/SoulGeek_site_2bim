@@ -1,3 +1,10 @@
+:root{
+    --cor-verde: #198754;
+    --cor-sidebar: #2b3035;
+    --cor-texto: white;
+    --cor-escura: black;
+}
+
 /*Carousel*/
 #carousel img{
     height: 550px;
@@ -31,7 +38,6 @@
 /*Card*/
 #sobre .card{
     transition: 0.3s;
-    background-color: #44576b;
     border: none;
     color: white;
     border-radius: 8px;
@@ -85,13 +91,15 @@
     opacity: 1;
 }
 
+
+/*Modal*/
 .modal-content{
     border-radius:20px;
 }
 
 .modal-header{
-    background:#198754;
-    color:white;
+    background:var(--cor-verde);
+    color:var(--cor-texto);
 }
 
 .modal-header .btn-close{
@@ -103,7 +111,7 @@
 }
 
 .modal-link{
-    color:#198754;
+    color:var(--cor-verde);
     font-weight:600;
     text-decoration:none;
 }
@@ -113,10 +121,53 @@
 }
 
 .modal-content{
-    color: black;
+    color: var(--cor-escura);
 }
 
 .modal-link a{
-    color: #198754;
+    color: var(--cor-verde);
     font-weight: 600;
+}
+
+/*ClaroEscuro*/
+
+#Lua{
+    display: none;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+#Sol{
+    display: block;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+#Sombra{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#btnClaroEscuro:checked + label #Lua{
+    display: block;
+}
+
+#btnClaroEscuro:checked + label #Sol{
+    display: none;
+}
+
+#btnClaroEscuro{
+    display: none;
+}
+#fundo{
+    width: 50px;
+    height: 40px;
+    background-color: var(--cor-escura);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+#btnClaroEscuro:checked + label #fundo ~ #fundo{
+    background-color: var(--cor-escura);
 }
