@@ -21,9 +21,7 @@
     <link rel="stylesheet" href="../../Assets/Css/style_padrao.css">
 
 </head>
-<body>
-    
-    <header>
+<body class="d-flex flex-column min-vh-100">
       <nav class="navbar navbar-dark bg-dark px-4">
         <div class="container-fluid">
           <!-- ESQUERDA -->
@@ -47,7 +45,7 @@
                   Perfil
                 </a>
 
-                <a href="#" class="d-block text-decoration-none py-2">
+                <a href="filme.html" class="d-block text-decoration-none py-2">
                   <i class="bi bi-search"></i>
                   Buscar
                 </a>
@@ -61,9 +59,156 @@
 
           <!-- DIREITA -->
           <div class="d-flex align-items-center gap-3">
-            <button class="btn btn-outline-light">Login</button>
+            <div id="areaUsuario" class="d-flex align-items-center gap-3">
+            <button
+              type="button"
+              class="btn btn-success text-nowrap"
+              data-bs-toggle="modal"
+              data-bs-target="#Login"
+              data-whatever="@getbootstrap"
+            >
+              Entrar
+            </button>
 
-            <button class="btn btn-success text-nowrap">Criar Conta</button>
+            <div class="modal fade" id="Login" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">
+                      <i class="bi bi-box-arrow-in-right"></i>
+                      Entrar no SoulGeek
+                    </h5>
+
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="loginEmail"
+                        placeholder="Digite seu email"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Senha</label>
+
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="loginSenha"
+                        placeholder="Digite sua senha"
+                      />
+                    </div>
+                    <div class="text-center mt-3">
+  Não possui uma conta?
+  <a href="#" id="abrirCadastro" class="modal-link">Cadastre-se</a>
+</div>
+                  </div>
+                  
+                  <div class="modal-footer">
+                    <button class="btn btn-success w-100" id="btnLogin">
+                      Entrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success text-nowrap"
+              data-bs-toggle="modal"
+              data-bs-target="#SignIn"
+              data-whatever="@getbootstrap"
+            >
+              Cadastrar
+            </button>
+
+            <div class="modal fade" id="SignIn" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">
+                      <i class="bi bi-person-plus"></i>
+                      Criar Conta
+                    </h5>
+
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label class="form-label">Nome</label>
+
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="cadastroNome"
+                        placeholder="Digite seu nome"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Email</label>
+
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="cadastroEmail"
+                        placeholder="Digite seu email"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Senha</label>
+
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="cadastroSenha"
+                        placeholder="Crie uma senha"
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Confirmar Senha</label>
+
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="cadastroConfirmacaoSenha"
+                        placeholder="Confirme sua senha"
+                      />
+                    </div>
+                      
+                    <div class="text-center mt-3">
+    Já possui uma conta?
+    <a href="#" id="abrirLogin" class="modal-link">Entrar</a>
+</div>
+                  </div>
+                  
+                  <div class="modal-footer">
+                    <button class="btn btn-success w-100" id="btnCadastro">
+                      Criar Conta
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
 
             <div class="input-group">
               <input
@@ -79,13 +224,12 @@
           </div>
         </div>
       </nav>
-    </header>
 
 <br><br><br>
 
     <!-- DESCRIÇÃO -->
      
-        <main class="blocksobre">
+        <main class="blocksobre flex-grow-1">
 
           <div></div>
 
@@ -148,7 +292,7 @@
                 Perfil
               </a>
 
-              <a href="#" class="text-secondary text-decoration-none">
+              <a href="filme.html" class="text-secondary text-decoration-none">
                 <i class="bi bi-search"></i>
                 Buscar
               </a>
