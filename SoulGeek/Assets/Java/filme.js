@@ -63,18 +63,22 @@ async function carregarSeries() {
                 titulo.innerText = serie.show.name;
                 titulo.className = "media-title";
 
-                a.appendChild(titulo);
+                
 
 
 
                 if (serie.show.image == null) {
-                    const semImagem = document.createElement("p");
-                    semImagem.innerText = "Imagem indisponível";
-                    semImagem.className = "text-secondary text-center mt-2";
+                    const semImagem = document.createElement("img");
+                    semImagem.className = "img-fluid";
+                    semImagem.src = "https://via.placeholder.com/210x295?text=Sem+Imagem";
                     a.appendChild(semImagem);
+                    titulo.className = "media-title";
+                    titulo.style.opacity = "1";
+                    a.appendChild(titulo);
                 } else {
                     imagem.src = serie.show.image.medium;
                     a.appendChild(imagem);
+                    a.appendChild(titulo);
                 }
 
                 cartao.appendChild(a);
