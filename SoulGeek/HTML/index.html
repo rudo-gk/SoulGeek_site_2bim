@@ -22,47 +22,53 @@
     <link rel="stylesheet" href="../Assets/Css/style_padrao.css" />
   </head>
 
-  <body>
-    <header>
-      <nav class="navbar navbar-dark bg-dark px-4">
-        <div class="container-fluid">
-          <!-- ESQUERDA -->
-          <div class="d-flex align-items-center gap-3">
-            <div id="menu-container">
-              <button class="btn text-light">
-                <i class="bi bi-list fs-2"></i>
-              </button>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-dark bg-dark px-4">
+      <div class="container-fluid">
+        <!-- ESQUERDA -->
+        <div class="d-flex align-items-center gap-3">
+          <div id="menu-container">
+            <button class="btn text-light">
+              <i class="bi bi-list fs-2"></i>
+            </button>
 
-              <div id="blur"></div>
+            <div id="blur"></div>
 
-              <!-- SIDEBAR -->
-              <div id="sidebar">
-                <a href="Pages/perfil.html" class="d-block text-decoration-none py-2">
-                  <i class="bi bi-person-circle"></i>
-                  Perfil
-                </a>
+            <!-- SIDEBAR -->
+            <div id="sidebar">
+              <a
+                href="Pages/perfil.html"
+                class="d-block text-decoration-none py-2"
+              >
+                <i class="bi bi-person-circle"></i>
+                Perfil
+              </a>
 
-                <a href="#" class="d-block text-decoration-none py-2">
-                  <i class="bi bi-search"></i>
-                  Buscar
-                </a>
+              <a
+                href="Pages/filme.html"
+                class="d-block text-decoration-none py-2"
+              >
+                <i class="bi bi-search"></i>
+                Buscar
+              </a>
 
-                <a
-                  href="Pages/sobre.html"
-                  class="d-block text-decoration-none py-2"
-                >
-                  <i class="bi bi-question-circle"></i>
-                  Sobre
-                </a>
-              </div>
+              <a
+                href="Pages/sobre.html"
+                target="_blank"
+                class="d-block text-decoration-none py-2"
+              >
+                <i class="bi bi-question-circle"></i>
+                Sobre
+              </a>
             </div>
-
-            <h1 class="text-light fs-3 m-0">SoulGeek</h1>
           </div>
 
-          <!-- DIREITA -->
-          <div class="d-flex align-items-center gap-3">
-            <div id="areaUsuario" class="d-flex align-items-center gap-3">
+          <h1 class="text-light fs-3 m-0">SoulGeek</h1>
+        </div>
+
+        <!-- DIREITA -->
+        <div class="d-flex align-items-center gap-3">
+          <div id="areaUsuario" class="d-flex align-items-center gap-3">
             <button
               type="button"
               class="btn btn-success text-nowrap"
@@ -112,11 +118,13 @@
                       />
                     </div>
                     <div class="text-center mt-3">
-  Não possui uma conta?
-  <a href="#" id="abrirCadastro" class="modal-link">Cadastre-se</a>
-</div>
+                      Não possui uma conta?
+                      <a href="#" id="abrirCadastro" class="modal-link"
+                        >Cadastre-se</a
+                      >
+                    </div>
                   </div>
-                  
+
                   <div class="modal-footer">
                     <button class="btn btn-success w-100" id="btnLogin">
                       Entrar
@@ -159,7 +167,7 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="cadNome"
+                        id="cadastroNome"
                         placeholder="Digite seu nome"
                       />
                     </div>
@@ -170,7 +178,7 @@
                       <input
                         type="email"
                         class="form-control"
-                        id="cadEmail"
+                        id="cadastroEmail"
                         placeholder="Digite seu email"
                       />
                     </div>
@@ -181,16 +189,28 @@
                       <input
                         type="password"
                         class="form-control"
-                        id="cadSenha"
+                        id="cadastroSenha"
                         placeholder="Crie uma senha"
                       />
                     </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Confirmar Senha</label>
+
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="cadastroConfirmacaoSenha"
+                        placeholder="Confirme sua senha"
+                      />
+                    </div>
+
                     <div class="text-center mt-3">
-    Já possui uma conta?
-    <a href="#" id="abrirLogin" class="modal-link">Entrar</a>
-</div>
+                      Já possui uma conta?
+                      <a href="#" id="abrirLogin" class="modal-link">Entrar</a>
+                    </div>
                   </div>
-                  
+
                   <div class="modal-footer">
                     <button class="btn btn-success w-100" id="btnCadastro">
                       Criar Conta
@@ -199,25 +219,24 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
 
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Buscar filmes ou séries"
-              />
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar filmes ou séries"
+            />
 
-              <button class="btn btn-success">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
+            <button class="btn btn-success">
+              <i class="bi bi-search"></i>
+            </button>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
 
-    <main>
+    <main class="flex-grow-1">
       <section id="carousel">
         <div
           id="carouselFilmes"
@@ -264,7 +283,7 @@
         </p>
         <button
           id="btnComecarAgora"
-            type="button"
+          type="button"
           class="btn btn-success text-nowrap"
           data-bs-toggle="modal"
           data-bs-target="#SignIn"
@@ -500,13 +519,13 @@
       </section>
 
       <section id="Sombra">
-        <input type="checkbox" id="btnClaroEscuro">
-          <label for="btnClaroEscuro" class="slider">
-            <div id="fundo" class="btn btn-dark">
-            <i id="Sol" class="bi bi-brightness-high-fill"></i> 
+        <input type="checkbox" id="btnClaroEscuro" />
+        <label for="btnClaroEscuro" class="slider">
+          <div id="fundo" class="btn btn-dark">
+            <i id="Sol" class="bi bi-brightness-high-fill"></i>
             <i id="Lua" class="bi bi-moon-stars-fill"></i>
-            </div>
-          </label>
+          </div>
+        </label>
       </section>
     </main>
 
@@ -525,17 +544,27 @@
           <div class="col-md-4">
             <h5>Navegação</h5>
             <div class="gap-4 d-flex">
-              <a href="Pages/perfil.html" class="text-secondary text-decoration-none">
+              <a
+                href="Pages/perfil.html"
+                class="text-secondary text-decoration-none"
+              >
                 <i class="bi bi-person-circle"></i>
                 Perfil
               </a>
 
-              <a href="#" class="text-secondary text-decoration-none">
+              <a
+                href="Pages/filme.html"
+                class="text-secondary text-decoration-none"
+              >
                 <i class="bi bi-search"></i>
                 Buscar
               </a>
 
-              <a href="Pages/sobre.html" class="text-secondary text-decoration-none">
+              <a
+                href="Pages/sobre.html"
+                target="_blank"
+                class="text-secondary text-decoration-none"
+              >
                 <i class="bi bi-question-circle"></i>
                 Sobre
               </a>
@@ -565,4 +594,3 @@
     <script src="../Assets/Java/main.js"></script>
   </body>
 </html>
-
