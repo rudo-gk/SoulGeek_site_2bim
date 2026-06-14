@@ -16,9 +16,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
+    <script>
+      const _tema = localStorage.getItem('tema');
+      if (_tema === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+
     <!--CSS-->
-    <link rel="stylesheet" href="../../Assets/Css/style_sobre.css">
     <link rel="stylesheet" href="../../Assets/Css/style_padrao.css">
+    <link rel="stylesheet" href="../../Assets/Css/style_sobre.css">
+    
 
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -268,10 +274,21 @@
                 <h2 id="nosso-catalogo">nosso catalogo</h2>
                 <p>lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque.  lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, cumque. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis in vel explicabo itaque similique distinctio inventore, placeat mollitia molestias nemo minima reiciendis laudantium consequuntur velit illo architecto saepe totam suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, quod ea dolores illum ipsum nesciunt veniam, obcaecati fugiat iste itaque odit accusamus ipsam? Dolores dolorum, fugiat eveniet in repellendus ab.</p>
             </div>
-
+            
             <div></div>
 
+
         </main>
+
+        <section id="Sombra">
+              <input type="checkbox" id="btnClaroEscuro" />
+               <label for="btnClaroEscuro" class="slider">
+                   <div id="fundo" class="btn btn-dark">
+                      <i id="Sol" class="bi bi-brightness-high-fill"></i>
+                       <i id="Lua" class="bi bi-moon-stars-fill"></i>
+                  </div>
+               </label>
+          </section>        
 
         <footer class="bg-dark text-light py-5 mt-5">
       <div class="container">
@@ -328,3 +345,4 @@
 
 </body>
 </html>
+
