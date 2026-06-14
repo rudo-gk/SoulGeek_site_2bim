@@ -35,14 +35,14 @@
 
             <!-- SIDEBAR -->
             <div id="sidebar">
+              <a href="../index.html" class="d-block text-decoration-none py-2">
+                <i class="bi bi-house"></i>
+                Início
+              </a>
+
               <a href="perfil.html" class="d-block text-decoration-none py-2">
                 <i class="bi bi-person-circle"></i>
                 Perfil
-              </a>
-
-              <a href="filme.html" class="d-block text-decoration-none py-2">
-                <i class="bi bi-search"></i>
-                Buscar
               </a>
 
               <a href="sobre.html" class="d-block text-decoration-none py-2">
@@ -215,24 +215,27 @@
     <main class="flex-grow-1" id="main">
       <div class="container py-5">
         <div>
-        <h2 class="mb-3">Buscar Filmes e Séries</h2>
-        <div class="input-group">
-          <input
-            id="campoBusca"
-            type="text"
-            class="form-control"
-            placeholder="Buscar filmes ou séries"
-          />
+          <h2 class="mb-3">Buscar Filmes e Séries</h2>
+          <div class="input-group">
+            <input
+              id="campoBusca"
+              type="text"
+              class="form-control"
+              placeholder="Buscar filmes ou séries"
+            />
 
-          <button class="btn btn-success" type="submit" id="btnBusca" onclick="carregarSeries()">
-            <i class="bi bi-search"></i>
-          </button>
+            <button
+              class="btn btn-success"
+              type="submit"
+              id="btnBusca"
+              onclick="carregarSeries()"
+            >
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
         </div>
-      </div>
 
-        <section id="resultados" class="mt-1 row g-4">
-        </section>
-          
+        <section id="resultados" class="mt-1 row g-4"></section>
       </div>
     </main>
 
@@ -255,9 +258,12 @@
                 Perfil
               </a>
 
-              <a href="filme.html" class="text-secondary text-decoration-none">
-                <i class="bi bi-search"></i>
-                Buscar
+              <a
+                href="../index.html"
+                class="text-secondary text-decoration-none"
+              >
+                <i class="bi bi-house"></i>
+                Inicio
               </a>
 
               <a
