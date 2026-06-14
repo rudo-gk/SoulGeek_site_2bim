@@ -1,3 +1,10 @@
+
+let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+if (usuarioLogado !== null) {
+  mostrarPerfil(usuarioLogado);
+}
+
+
 // TROCA ENTRE MODAIS
 
 const modalLogin = new bootstrap.Modal(document.getElementById("Login"));
@@ -99,7 +106,29 @@ document.getElementById("btnLogin").addEventListener("click", () => {
 
 function mostrarPerfil(usuarioLogado) {
   document.getElementById("areaUsuario").innerHTML = `
-        <button
+    <button id="btnExcluir" class="btn btn-outline-danger d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#ExcluirModal">
+        <i class="bi bi-trash"></i>
+        Excluir Conta
+    </button> 
+    <div class="modal fade" id="ExcluirModal" tabindex="-1" aria-labelledby="ExcluirModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ExcluirModalLabel">Excluir Conta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Você tem certeza que deseja excluir sua conta? Esta ação é irreversível.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" onclick="excluirConta()">Excluir Conta</button>
+      </div>
+    </div>
+  </div>
+</div>       
+  
+  <button
             id="btnSair"
             class="btn btn-outline-light d-flex align-items-center gap-2"
             onclick="sair()"
@@ -122,8 +151,17 @@ function sair() {
   localStorage.removeItem("usuarioLogado");
   location.reload();
 }
+function excluirConta() {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
-let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
-if (usuarioLogado !== null) {
-  mostrarPerfil(usuarioLogado);
+  for (let i = 0; i < usuarios.length; i++) {
+    if (usuarioLogado.email === usuarios[i].email) {
+      usuarios.splice(i, 1);
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      alert("Conta excluída com sucesso.");
+      location.reload();
+      return;
+    }
+  }
 }
+
