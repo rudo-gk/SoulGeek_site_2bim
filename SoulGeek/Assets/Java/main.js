@@ -4,14 +4,15 @@ if (usuarioLogado !== null) {
   mostrarPerfil(usuarioLogado);
 }
 
-const elLogin = document.getElementById("Login");
-const elSignIn = document.getElementById("SignIn");
 
 
 
-if (elLogin && elSignIn) {
-    const modalLogin = new bootstrap.Modal(elLogin);
-    const modalCadastro = new bootstrap.Modal(elSignIn);
+    const modalLogin = new bootstrap.Modal(
+    document.getElementById("Login")
+);
+    const modalCadastro = new bootstrap.Modal(
+    document.getElementById("SignIn")
+);
 
     document.getElementById("abrirCadastro").addEventListener("click", (e) => {
         e.preventDefault();
@@ -77,7 +78,7 @@ if (elLogin && elSignIn) {
         }
         alert("Email ou senha incorretos.");
     });
-}
+
 
 function mostrarPerfil(usuarioLogado) {
   document.getElementById("areaUsuario").innerHTML = `
@@ -128,11 +129,12 @@ function sair() {
 }
 function excluirConta() {
   let usuarios = JSON.parse(localStorage.getItem("usuarios"));
-
+    let usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
   for (let i = 0; i < usuarios.length; i++) {
     if (usuarioLogado.email === usuarios[i].email) {
       usuarios.splice(i, 1);
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      localStorage.removeItem("usuarioLogado");
       alert("Conta excluída com sucesso.");
       location.reload();
       return;
@@ -147,10 +149,10 @@ const checkbox = document.getElementById('btnClaroEscuro');
 const temaSalvo = localStorage.getItem('tema');
 if (temaSalvo === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
-    checkbox.checked = false;
+    checkbox.checked = true;
 } else {
     document.documentElement.setAttribute('data-theme', 'dark');
-    checkbox.checked = true;
+    checkbox.checked = false;
 }
 
 // Quando o botão é clicado, alterna o tema
