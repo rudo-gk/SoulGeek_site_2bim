@@ -16,6 +16,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
 
+<!-- Aplica o tema ANTES do CSS carregar, evitando piscar -->
+    <script>
+      const _tema = localStorage.getItem('tema');
+      if (_tema === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+
     <!--CSS-->
     <link rel="stylesheet" href="../../Assets/Css/style_sobre.css" />
     <link rel="stylesheet" href="../../Assets/Css/style_padrao.css" />
@@ -237,6 +243,17 @@
 
         <section id="resultados" class="mt-1 row g-4"></section>
       </div>
+      
+      <section id="Sombra">
+        <input type="checkbox" id="btnClaroEscuro" />
+        <label for="btnClaroEscuro" class="slider">
+          <div id="fundo" class="btn btn-dark">
+            <i id="Sol" class="bi bi-brightness-high-fill"></i>
+            <i id="Lua" class="bi bi-moon-stars-fill"></i>
+          </div>
+        </label>
+      </section>
+
     </main>
 
     <footer class="bg-dark text-light py-5 mt-5">
