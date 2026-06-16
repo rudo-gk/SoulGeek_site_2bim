@@ -110,7 +110,6 @@ h2{
     border-radius:20px;
     background-color: var(--modal-bg) !important;
     color: var(--modal-text) !important;
-
 }
 
 .modal-header{
@@ -164,6 +163,4 @@ h2{
 
 
 /* Footer */
-footer.bg-dark {
-    background-color: var(--footer-bg) !important;
-}
+
