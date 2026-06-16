@@ -25,6 +25,10 @@ else {
     descricao.innerHTML = serie.show.summary;
 }
 
+const genero = document.getElementById("generos");
+genero.innerHTML = serie.show.genres;
+
+
 }
 buscarSerie();
 
