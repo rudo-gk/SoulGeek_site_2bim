@@ -1,34 +1,34 @@
 
 :root {
-    --cor-verde: #20c997;
-    --cor-sidebar: #2b3035;
+    --cor-verde: #B8860B;
+    --cor-sidebar: #241D18;
     --cor-texto: white;
 
     /* Tema ESCURO (padrão) */
-    --bg: #1e1f22;
-    --text: #f3f3f3;
-    --modal-bg: #1e1e1e;
-    --modal-text: #f1f1f1;
-    --input-bg: #2a2a2a;
-    --input-text: #f1f1f1;
-    --input-border: #555;
-    --card-sobre-bg: #2b2d31;
-    --footer-bg: #111418;
-    --h2-color: #f1f1f1;
+    --bg: #1E1A17;
+    --text: #F3E7D3;
+    --modal-bg: #2B2520;
+    --modal-text: #F3E7D3;
+    --input-bg: #3A312B;
+    --input-text: #F3E7D3;
+    --input-border: #6A5A4B;
+    --card-sobre-bg: #2B2520;
+    --footer-bg: #120F0D;
+    --h2-color: #F3E7D3;
 }
 
 [data-theme="light"] {
-    --bg: #f8f9fa;
-    --text: #212529;
-    --modal-bg: #ffffff;
-    --modal-text: #212529;
-    --input-bg: #ffffff;
-    --input-text: #212529;
-    --input-border: #ced4da;
-    --card-sobre-bg: #ffffff;
-   --footer-bg: #313539;
-    --h2-color: #212529;
-    --navbar-bg: #ffffff;
+    --bg: #F4E9D8;
+    --text: #3B2F2F;
+    --modal-bg: #FFF8EC;
+    --modal-text: #3B2F2F;
+    --input-bg: #FDF6EA;
+    --input-text: #3B2F2F;
+    --input-border: #CDBA9A;
+    --card-sobre-bg: #FFF8EC;
+   --footer-bg: #DCCCB5;
+    --h2-color: #3B2F2F;
+    --navbar-bg: #E8DCC8;
 }
 
 body{
