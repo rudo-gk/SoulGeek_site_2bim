@@ -124,3 +124,7 @@ body{
     position: relative;
     cursor: pointer;
 }
+
+footer.bg-dark {
+    background-color: var(--footer-bg) !important;
+}
