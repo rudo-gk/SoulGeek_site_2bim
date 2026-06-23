@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SoulGeek</title>
+    <title>SoulGeek - Media</title>
 
     <!-- Bootstrap -->
     <link
@@ -19,15 +19,16 @@
 
     <!-- Aplica o tema ANTES do CSS carregar, evitando piscar -->
     <script>
-      const _tema = localStorage.getItem('tema');
-      if (_tema === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      const _tema = localStorage.getItem("tema");
+      if (_tema === "light")
+        document.documentElement.setAttribute("data-theme", "light");
     </script>
 
     <!--CSS-->
     <link rel="stylesheet" href="../../Assets/Css/style_padrao.css" />
     <link rel="stylesheet" href="../../Assets/Css/style_index.css" />
   </head>
-<body class="d-flex flex-column min-vh-100">
+  <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-dark bg-dark px-4">
       <div class="container-fluid">
         <!-- ESQUERDA -->
@@ -41,23 +42,16 @@
 
             <!-- SIDEBAR -->
             <div id="sidebar">
-              
               <a href="../index.html" class="d-block text-decoration-none py-2">
-                  <i class="bi bi-house"></i>
-                  Início
-                </a>
-                <a
-                href="perfil.html"
-                class="d-block text-decoration-none py-2"
-              >
+                <i class="bi bi-house"></i>
+                Início
+              </a>
+              <a href="perfil.html" class="d-block text-decoration-none py-2">
                 <i class="bi bi-person-circle"></i>
                 Perfil
               </a>
 
-              <a
-                href="serie.html"
-                class="d-block text-decoration-none py-2"
-              >
+              <a href="serie.html" class="d-block text-decoration-none py-2">
                 <i class="bi bi-search"></i>
                 Buscar
               </a>
@@ -234,63 +228,56 @@
       </div>
     </nav>
     <main class="flex-grow-1">
-        <div class="container mt-5">
-
-    <div class="row">
-
-        <div class="col-md-4">
-            <img id="imagem" class="img-fluid">
-        </div>
-
-        <div class="col-md-8">
-          <div id="info">
-            <h3 id="generos"></h3>
-            <h1 id="titulo"></h1>
-
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-4">
+            <img id="imagem" class="img-fluid" />
           </div>
+
+          <div class="col-md-8">
+            <div id="info">
+              <h3 id="generos"></h3>
+              <h1 id="titulo"></h1>
+            </div>
 
             <p id="descricao"></p>
 
-            
-
-            <div class="mt-4">
-
-                <button id="btnLike"
-                    class="btn btn-success">
-                    <i class="bi bi-heart-fill"></i>
-                    Curtir
+            <div id="interacoesUsuario">
+              <div class="mt-4">
+                <button id="btnLike" class="btn btn-success">
+                  <i class="bi bi-heart-fill"></i>
+                  Curtir
                 </button>
 
-                <button id="btnWatchlist"
-                    class="btn btn-warning">
-                    <i class="bi bi-bookmark-fill"></i>
-                    Watchlist
+                <button id="btnWatchlist" class="btn btn-warning">
+                  <i class="bi bi-bookmark-fill"></i>
+                  Watchlist
                 </button>
+              </div>
 
-            </div>
-
-            <div class="mt-4">
-
+              <div class="mt-4">
                 <h4>Sua nota</h4>
 
                 ⭐⭐⭐⭐⭐
-
+              </div>
+              <select id="notaUsuario" class="form-select">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button id="btnSalvarNota" class="btn btn-primary">
+        Salvar Nota
+    </button>
             </div>
-            <select id="notaUsuario" class="form-select">
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-</select>
 
+
+          </div>
         </div>
-
-    </div>
-
-</div>
-<section id="Sombra">
+      </div>
+      <section id="Sombra">
         <input type="checkbox" id="btnClaroEscuro" />
         <label for="btnClaroEscuro" class="slider">
           <div id="fundo" class="btn btn-dark">
@@ -365,7 +352,7 @@
     <script src="../../Assets/Java/main.js"></script>
 
     <script src="../../Assets/Java/serie.js"></script>
-    
+
     <script src="../../Assets/Java/media.js"></script>
-</body>
+  </body>
 </html>
