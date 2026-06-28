@@ -3,23 +3,28 @@ if (usuarioLogado !== null) {
   mostrarPerfil(usuarioLogado);
 }
 
-const modalLogin = new bootstrap.Modal(document.getElementById("Login"));
-const modalCadastro = new bootstrap.Modal(document.getElementById("SignIn"));
 
-document.getElementById("abrirCadastro").addEventListener("click", (e) => {
+
+const abrirCadastro = document.getElementById("abrirCadastro");
+if (abrirCadastro) {  
+abrirCadastro.addEventListener("click", (e) => {
   e.preventDefault();
   modalLogin.hide();
   modalCadastro.show();
 });
-
-document.getElementById("abrirLogin").addEventListener("click", (e) => {
+}
+const abrirLogin = document.getElementById("abrirLogin");
+if(abrirLogin){
+abrirLogin.addEventListener("click", (e) => {
   e.preventDefault();
   modalCadastro.hide();
   modalLogin.show();
 });
-
+}
 // Cadastro de usuário
-document.getElementById("btnCadastro").addEventListener("click", () => {
+const btnCadastro = document.getElementById("btnCadastro");
+if(btnCadastro){
+btnCadastro.addEventListener("click", () => {
   const nome = document.getElementById("cadastroNome").value;
   const email = document.getElementById("cadastroEmail").value.toLowerCase();
   const senha = document.getElementById("cadastroSenha").value;
@@ -66,13 +71,18 @@ document.getElementById("btnCadastro").addEventListener("click", () => {
   usuarios.push(novoUsuario);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   localStorage.setItem("usuarioLogado", JSON.stringify(novoUsuario));
-  mostrarPerfil(novoUsuario);
   alert("Conta criada com sucesso!");
-  modalCadastro.hide();
+  const modalEl = document.getElementById("SignIn");
+const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+modal.hide();
+mostrarPerfil(novoUsuario);
+location.reload();
 });
-
+}
 // Login de usuário
-document.getElementById("btnLogin").addEventListener("click", () => {
+const btnLogin = document.getElementById("btnLogin");
+if(btnLogin){
+btnLogin.addEventListener("click", () => {
   const email = document.getElementById("loginEmail").value.toLowerCase();
   const senha = document.getElementById("loginSenha").value;
   const usuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -83,17 +93,20 @@ document.getElementById("btnLogin").addEventListener("click", () => {
 
   for (const usuario of usuarios) {
     if (usuario.email === email && usuario.senha === senha) {
-      const logado = usuario;
-      localStorage.setItem("usuarioLogado", JSON.stringify(logado));
-      mostrarPerfil(logado);
+      const usuarioLogado = usuario;
+      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
       alert("Login realizado com sucesso!");
-      modalLogin.hide();
+      const modalEl = document.getElementById("Login");
+      const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      modal.hide();
+      mostrarPerfil(usuarioLogado);
+      location.reload();
       return;
     }
   }
   alert("Email ou senha incorretos.");
 });
-
+}
 function mostrarPerfil(usuarioLogado) {
   document.getElementById("areaUsuario").innerHTML = `
     <button id="btnExcluir" class="btn btn-outline-danger d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#ExcluirModal">
@@ -128,13 +141,17 @@ function mostrarPerfil(usuarioLogado) {
         </button>
     
     <a
-            href="../HTML/Pages/perfil.html"
+            href="perfil.html"
             class="btn btn-outline-light d-flex align-items-center gap-2"
         >
             <i class="bi bi-person-circle"></i>
             ${usuarioLogado.nome}
         </a>
     `;
+    const btnComecarAgora = document.getElementById("btnComecarAgora");
+if (btnComecarAgora) {
+    btnComecarAgora.style.display = "none";
+}
 }
 
 function sair() {
