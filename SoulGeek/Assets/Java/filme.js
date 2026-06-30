@@ -2,16 +2,16 @@
 //NÃO ESTÁ FINALIZADO, MAS ESTÁ FUNCIONANDO
 
 //Séries
-let series = [];
+let filmes = [];
 
-async function carregarSeries() {
+async function carregarFilmes() {
   try {
-    const nomeSerie = document.getElementById("campoBusca").value.trim();
-    if (nomeSerie === "") {
+    const nomeFilme = document.getElementById("campoBusca").value.trim();
+    if (nomeFilme === "") {
       const section = document.getElementById("resultados");
       section.innerHTML = "";
       const p = document.createElement("p");
-      p.innerText = "Por favor, digite o nome de uma série.";
+      p.innerText = "Por favor, digite o nome de um filme.";
       p.className = "fs-3 fw-bold text-center mt-5 text-secondary";
       section.appendChild(p);
       return;
@@ -19,14 +19,14 @@ async function carregarSeries() {
     const section = document.getElementById("resultados");
     section.innerHTML = "";
     const p = document.createElement("p");
-    p.innerText = "Carregando séries...";
+    p.innerText = "Carregando filmes...";
     p.className = "fs-3 fw-bold text-center mt-5 text-secondary";
     section.appendChild(p);
     const resposta = await fetch(
-      `https://api.tvmaze.com/search/shows?q=${nomeSerie}`,
+      `http://www.omdbapi.com/?s=${nomeFilme}&apikey=11b03a97`,
     );
-    series = await resposta.json();
-    mostrarNaTela(series);
+    filmes = await resposta.json();
+    mostrarNaTela(filmes.Search);
   } catch (erro) {
     const section = document.getElementById("resultados");
     section.innerHTML = "";
@@ -36,37 +36,37 @@ async function carregarSeries() {
     section.appendChild(p);
   }
 }
-function mostrarNaTela(series) {
+function mostrarNaTela(filmes) {
   const section = document.getElementById("resultados");
   section.innerHTML = "";
 
-  if (series.length === 0) {
+  if (filmes.length === 0) {
     const h3 = document.createElement("h3");
-    h3.innerText = "Nenhuma Série encontrada";
+    h3.innerText = "Nenhuma Filme encontrado";
     h3.className = "fw-bold text-center mt-5 text-secondary";
     section.appendChild(h3);
     return;
   }
 
-  series.forEach((serie) => {
+  filmes.forEach((filme) => {
     const cartao = document.createElement("div");
     cartao.className = "col-6 col-md-4 col-lg-2";
 
     const a = document.createElement("a");
     a.addEventListener("click", () => {
-      localStorage.setItem("serieSelecionada", serie.show.name);
+      localStorage.setItem("FilmeSelecionado", filme.imdbID);
     });
-    a.href = `media.html`;
+    a.href = `mediaFilme.html`;
     a.className = "media-card";
 
     const imagem = document.createElement("img");
     imagem.className = "img-fluid";
 
     const titulo = document.createElement("div");
-    titulo.innerText = serie.show.name;
+    titulo.innerText = filme.Title;
     titulo.className = "media-title";
 
-    if (serie.show.image == null) {
+    if (filme.Poster == "N/A") {
       const semImagem = document.createElement("img");
       semImagem.className = "img-fluid";
       semImagem.src = "https://via.placeholder.com/210x295?text=Sem+Imagem";
@@ -75,7 +75,7 @@ function mostrarNaTela(series) {
       titulo.style.opacity = "1";
       a.appendChild(titulo);
     } else {
-      imagem.src = serie.show.image.medium;
+      imagem.src = filme.Poster;
       a.appendChild(imagem);
       a.appendChild(titulo);
     }
