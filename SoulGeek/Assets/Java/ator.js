@@ -147,7 +147,7 @@ function mostrarSeriesDoAtor(serie) {
       titulo.style.opacity = "1";
       a.appendChild(titulo);
     } else {
-      imagem.src = serie._embedded.show.image.medium;
+      imagem.src = serie._embedded.show.image.original;
       a.appendChild(imagem);
       a.appendChild(titulo);
     }
