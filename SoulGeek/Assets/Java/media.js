@@ -15,7 +15,7 @@ async function buscarSerie() {
   if (serie.show.image == null) {
     imagem.src = "https://via.placeholder.com/210x295?text=Sem+Imagem";
   } else {
-    imagem.src = serie.show.image.medium;
+    imagem.src = serie.show.image.original;
   }
   const descricao = document.getElementById("descricao");
   if (serie.show.summary == null) {
