@@ -1,0 +1,65 @@
+
+
+.sobretexto{
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 20px;
+    
+}
+
+.sobretexto p{
+    line-height:1.8;
+}
+
+.sobretexto h2{
+    color: var(--cor-destaque);
+    border-bottom:2px solid var(--cor-destaque);
+    padding-bottom:8px;
+}
+
+.navsobre{
+    position: sticky;
+    top: 120px; /* ajuste conforme a altura da navbar */
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+    background: var(--card-sobre-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 6px 12px var(--card-shadow);
+
+}
+
+.secao-sobre{
+    background-color: var(--card-sobre-bg);;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 6px 12px var(--card-shadow);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition:0.25s;
+}
+
+.secao-sobre:hover{
+    transform:translateY(-3px);
+}
+
+.navsobre a{
+    text-decoration: none;
+    color: var(--cor-destaque);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: .25s;
+}
+
+.navsobre a:hover{
+    filter: brightness(1.1);
+    transform: translateX(5px);
+}
