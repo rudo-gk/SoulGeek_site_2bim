@@ -75,7 +75,7 @@ function mostrarNaTela(series) {
       titulo.style.opacity = "1";
       a.appendChild(titulo);
     } else {
-      imagem.src = serie.show.image.medium;
+      imagem.src = serie.show.image.original;
       a.appendChild(imagem);
       a.appendChild(titulo);
     }
