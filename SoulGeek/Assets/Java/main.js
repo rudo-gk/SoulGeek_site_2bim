@@ -124,8 +124,8 @@ function mostrarPerfil(usuarioLogado) {
         Você tem certeza que deseja excluir sua conta? Esta ação é irreversível.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" onclick="excluirConta()">Excluir Conta</button>
+        <button type="button" class="btn" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn" onclick="excluirConta()">Excluir Conta</button>
       </div>
     </div>
   </div>
